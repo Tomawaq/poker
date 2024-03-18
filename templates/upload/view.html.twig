@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Le Fichier{% endblock %}
+
+{% block body %}
+<a href="{{ path('app_upload_form') }}">Retour</a>
+<div>
+    <div>
+        <div>
+            <span>Nom du fichier :</span>
+            <span>{{ file.name }}</span>
+        </div>
+    </div>
+    <textarea style="width:100%;" rows="30">{{ file.content }}</textarea>
+    <div>
+        {% dump(file.data) %}
+        {% for hand in file.data %}
+        <details>
+            <summary>{{ hand.GAME }} ({{ hand.unmatched_lines|length }})</summary>
+        </details>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

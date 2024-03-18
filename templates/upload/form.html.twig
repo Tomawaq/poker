@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ouvrir un ficher!{% endblock %}
+
+{% block body %}
+<div>
+    <form method="post" enctype="multipart/form-data">
+        <input type="file" name="poker_history" />
+        <button type="submit" value="poker_file">Ouvrir</button>
+    </form>
+</div>
+{% endblock %}
